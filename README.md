@@ -597,3 +597,14 @@ node demo-positive.js
   "echo": "1"
 }
 ```
+
+### 账号列表
+
+**功能：** 获取账号列表
+
+```json
+{
+  "action": "get_account_list",
+  "echo": "1"
+}
+```
