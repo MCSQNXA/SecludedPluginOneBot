@@ -2,7 +2,7 @@
 
 本 **Secluded** 插件基于 **OneBot 11** 标准协议。
 
-## 1. 快速开始
+## 快速开始
 
 ### 安装依赖
 
@@ -12,7 +12,7 @@
 npm install ws
 ```
 
-### 1.1 初始化配置
+### 初始化配置
 
 ```javascript
 const PositiveWebSocket = require('./lib/positive-websocket');
@@ -25,17 +25,17 @@ const bot = new PositiveWebSocket({
 bot.connect();
 ```
 
-### 1.2 运行 demo
+### 运行 demo
 
 ```bash
 node demo-positive.js
 ```
 
-## 2. 功能发包协议说明
+## 功能发包协议说明
 
 以下是不同功能对应的 原始 JSON 结构：
 
-### 2.1 文本回复
+### 文本回复
 
 **功能：** 发送纯文本消息。
 
@@ -60,7 +60,7 @@ node demo-positive.js
 }
 ```
 
-### 2.2 发送图片
+### 发送图片
 
 **功能：** 发送网络图片链接。
 
@@ -85,7 +85,7 @@ node demo-positive.js
 }
 ```
 
-### 2.3 图文混合
+### 图文混合
 
 **功能：** 同一条消息包含文本和图片。
 
@@ -116,7 +116,82 @@ node demo-positive.js
 }
 ```
 
-### 2.4 发送语音
+### 发送闪照
+
+**功能：** 发送好友闪照。
+
+```json
+{
+  "action": "send_private_msg",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "uin": "目标对象",
+    "message": [
+      {
+        "type": "flash",
+        "data": {
+          "file": "https://example.com/image.jpg"
+        }
+      }
+    ]
+  },
+  "echo": "1"
+}
+```
+
+### 发送表情
+
+**功能：** 发送好友超级表情。
+
+```json
+{
+  "action": "send_private_msg",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "uin": "目标对象",
+    "message": [
+      {
+        "type": "emoq",
+        "data": {
+          "id": "53"
+        }
+      }
+    ]
+  },
+  "echo": "1"
+}
+```
+
+### 发送表情
+
+**功能：** 发送好友小黄脸表情。
+
+```json
+{
+  "action": "send_private_msg",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "uin": "目标对象",
+    "message": [
+      {
+        "type": "emoy",
+        "data": {
+          "id": "13"
+        }
+      }
+    ]
+  },
+  "echo": "1"
+}
+```
+
+### 发送语音
 
 **功能：** 发送语音文件。
 
@@ -141,7 +216,7 @@ node demo-positive.js
 }
 ```
 
-### 2.5 艾特用户 (Mention)
+### 艾特用户 (Mention)
 
 **功能：** 在群聊中艾特指定成员。
 
@@ -173,7 +248,7 @@ node demo-positive.js
 }
 ```
 
-### 2.6 艾特全体成员
+### 艾特全体成员
 
 **功能：** 群聊中发起全体提醒。
 
@@ -198,7 +273,7 @@ node demo-positive.js
 }
 ```
 
-### 2.7 回复消息
+### 回复消息
 
 **功能：** 引用特定消息进行回复。
 
@@ -235,7 +310,7 @@ node demo-positive.js
 }
 ```
 
-### 2.8 撤回消息
+### 撤回消息
 
 **功能：** 撤回消息（撤回自己或他人）。
 
@@ -253,7 +328,7 @@ node demo-positive.js
 }
 ```
 
-### 2.9 机器人信息
+### 机器人信息
 
 **功能：** 获取 机器人 账号 昵称 skey pskey
 
@@ -310,7 +385,7 @@ node demo-positive.js
 }
 ```
 
-### 2.10 名片赞
+### 名片赞
 
 **功能：** 给用户点赞
 
@@ -328,7 +403,7 @@ node demo-positive.js
 }
 ```
 
-### 2.11 新的好友
+### 新的好友
 
 **功能：** 同意/拒绝 新的好友 申请
 
@@ -346,7 +421,7 @@ node demo-positive.js
 }
 ```
 
-### 2.12 群聊列表
+### 群聊列表
 
 **功能：** 获取 群聊列表
 
@@ -362,7 +437,7 @@ node demo-positive.js
 }
 ```
 
-### 2.13 好友列表
+### 好友列表
 
 **功能：** 获取 好友列表
 
@@ -378,7 +453,7 @@ node demo-positive.js
 }
 ```
 
-### 2.14 好友备注
+### 好友备注
 
 **功能：** 修改好友备注
 
@@ -396,7 +471,7 @@ node demo-positive.js
 }
 ```
 
-### 2.15 群聊全体禁言
+### 群聊全体禁言
 
 **功能：** 开启（time>0） 关闭（time=0） 群聊全体禁言
 
@@ -414,7 +489,7 @@ node demo-positive.js
 }
 ```
 
-### 2.16 群聊成员禁言
+### 群聊成员禁言
 
 **功能：** 禁言成员 time=时长（秒）
 
@@ -432,7 +507,7 @@ node demo-positive.js
 }
 ```
 
-### 2.17 群聊打卡
+### 群聊打卡
 
 **功能：** 执行 群聊打卡
 
@@ -449,7 +524,7 @@ node demo-positive.js
 }
 ```
 
-### 2.18 踢出
+### 踢出
 
 **功能：** 踢出群聊成员
 
@@ -469,7 +544,7 @@ node demo-positive.js
 }
 ```
 
-### 2.19 退群
+### 退群
 
 **功能：** 主动退群
 
@@ -486,7 +561,7 @@ node demo-positive.js
 }
 ```
 
-### 2.20 删除好友
+### 删除好友
 
 **功能：** 主动删除好友
 
@@ -498,6 +573,26 @@ node demo-positive.js
       "user_id": "登录账号"
     },
     "user_id": "目标对象"
+  },
+  "echo": "1"
+}
+```
+
+### 发送协议
+
+**功能：** 发送协议数据包（reply=true 需要应答）
+
+```json
+{
+  "action": "send_protocol",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "seq": "10000",
+    "cmd": "trpc.qq_new_tech.status_svc.StatusService.SsoHeartBeat",
+    "dat": "080112020801180020B2EAD0B906",
+    "reply": true
   },
   "echo": "1"
 }
