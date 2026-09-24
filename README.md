@@ -222,6 +222,12 @@ node demo-positive.js
         "data": {
           "id": "需要回复的消息id"
         }
+      },
+      {
+        "type": "emo_reply",
+        "data": {
+          "id": "表情id"
+        }
       }
     ]
   },
@@ -317,6 +323,181 @@ node demo-positive.js
     },
     "user_id": "点赞对象",
     "times": "点赞次数"
+  },
+  "echo": "1"
+}
+```
+
+### 2.11 新的好友
+
+**功能：** 同意/拒绝 新的好友 申请
+
+```json
+{
+  "action": "new_friend_notify",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "user_id": "目标账号",
+    "agree": true
+  },
+  "echo": "1"
+}
+```
+
+### 2.12 群聊列表
+
+**功能：** 获取 群聊列表
+
+```json
+{
+  "action": "get_group_list",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    }
+  },
+  "echo": "1"
+}
+```
+
+### 2.13 好友列表
+
+**功能：** 获取 好友列表
+
+```json
+{
+  "action": "get_friend_list",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    }
+  },
+  "echo": "1"
+}
+```
+
+### 2.14 好友备注
+
+**功能：** 修改好友备注
+
+```json
+{
+  "action": "set_friend_remask",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "user_id": "修改对象",
+    "user_remask": "新的备注"
+  },
+  "echo": "1"
+}
+```
+
+### 2.15 群聊全体禁言
+
+**功能：** 开启（time>0） 关闭（time=0） 群聊全体禁言
+
+```json
+{
+  "action": "set_group_ban",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "group_id": "目标群号",
+    "time": 1
+  },
+  "echo": "1"
+}
+```
+
+### 2.16 群聊成员禁言
+
+**功能：** 禁言成员 time=时长（秒）
+
+```json
+{
+  "action": "set_group_ban",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "user_id": "目标对象",
+    "time": 60
+  },
+  "echo": "1"
+}
+```
+
+### 2.17 群聊打卡
+
+**功能：** 执行 群聊打卡
+
+```json
+{
+  "action": "group_clockin",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "group_id": "目标群号"
+  },
+  "echo": "1"
+}
+```
+
+### 2.18 踢出
+
+**功能：** 踢出群聊成员
+
+```json
+{
+  "action": "group_kick",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "group_id": "目标群号",
+    "user_id": "目标对象",
+    "black_list": false,
+    "text": "加入黑名单的理由"
+  },
+  "echo": "1"
+}
+```
+
+### 2.19 退群
+
+**功能：** 主动退群
+
+```json
+{
+  "action": "group_exit",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "group_id": "目标群号"
+  },
+  "echo": "1"
+}
+```
+
+### 2.20 删除好友
+
+**功能：** 主动删除好友
+
+```json
+{
+  "action": "friend_del",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "user_id": "目标对象"
   },
   "echo": "1"
 }
