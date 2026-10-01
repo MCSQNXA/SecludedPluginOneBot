@@ -1,7 +1,7 @@
 // noinspection JSIgnoredPromiseFromCall
 
 async function main() {
-    const res = await fetch('http://127.0.0.1:9090/?token=123', {// token 必须设置
+    const res = await fetch('http://127.0.0.1:80/onebot?token=123', {// token 必须设置 前端令牌
         method: 'POST',
         body: JSON.stringify(// POST 的内容; 和 正向 WebSocket 请求内容一致
             {
