@@ -18,8 +18,8 @@ npm install ws
 const PositiveWebSocket = require('./lib/positive-websocket');
 
 const bot = new PositiveWebSocket({
-    'url': 'ws://localhost:8090',                 // Secluded 运行设置 里面的 正向 WebSocket 地址:端口
-    'access_token': 'LRjPX2tJ4Jv9NqBw',           // Secluded 运行设置 里面的 正向 WebSocket 令牌
+    'url': 'ws://localhost:24804/onebot',       // Secluded 运行设置 里面的 协议端口
+    'access_token': 'y5s9WERi',                 // Secluded 运行设置 里面的 协议令牌
 });
 
 bot.connect();
