@@ -127,7 +127,7 @@ node demo-positive.js
     "self": {
       "user_id": "登录账号"
     },
-    "uin": "目标对象",
+    "user_id": "目标对象",
     "message": [
       {
         "type": "flash",
@@ -152,7 +152,7 @@ node demo-positive.js
     "self": {
       "user_id": "登录账号"
     },
-    "uin": "目标对象",
+    "user_id": "目标对象",
     "message": [
       {
         "type": "emoq",
@@ -177,7 +177,7 @@ node demo-positive.js
     "self": {
       "user_id": "登录账号"
     },
-    "uin": "目标对象",
+    "user_id": "目标对象",
     "message": [
       {
         "type": "emoy",
@@ -491,7 +491,7 @@ node demo-positive.js
 
 ### 群聊成员禁言
 
-**功能：** 禁言成员 time=时长（秒）
+**功能：** 禁言成员 time=时长（秒） time=0（解禁）
 
 ```json
 {
