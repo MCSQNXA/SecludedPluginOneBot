@@ -409,7 +409,7 @@ node demo-positive.js
 
 ```json
 {
-  "action": "new_friend_notify",
+  "action": "add_friend_notify",
   "params": {
     "self": {
       "user_id": "登录账号"
