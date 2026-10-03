@@ -544,6 +544,7 @@ node demo-positive.js
     "self": {
       "user_id": "登录账号"
     },
+    "group_id": "目标群号",
     "user_id": "目标对象",
     "title": "头衔"
   },
