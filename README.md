@@ -310,6 +310,32 @@ node demo-positive.js
 }
 ```
 
+### 表情回应
+
+**功能：** 引用特定消息进行回复。
+
+```json
+{
+  "action": "send_group_msg",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "group_id": "群号",
+    "message_id": "消息id",
+    "message": [
+      {
+        "type": "emo_reply",
+        "data": {
+          "id": "表情id"
+        }
+      }
+    ]
+  },
+  "echo": "1"
+}
+```
+
 ### 撤回消息
 
 **功能：** 撤回消息（撤回自己或他人）。
