@@ -533,6 +533,24 @@ node demo-positive.js
 }
 ```
 
+### 设置专属头衔
+
+**功能：** 设置群成员的专属头衔 需要打开头衔 群主身份
+
+```json
+{
+  "action": "set_group_special",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "user_id": "目标对象",
+    "title": "头衔"
+  },
+  "echo": "1"
+}
+```
+
 ### 群聊打卡
 
 **功能：** 执行 群聊打卡
