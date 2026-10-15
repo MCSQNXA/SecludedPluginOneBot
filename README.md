@@ -429,6 +429,38 @@ node demo-positive.js
 }
 ```
 
+### 名片赞列表
+
+**功能：** 谁赞过我
+
+```json
+{
+  "action": "get_like_list",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "type": "peer"
+  },
+  "echo": "1"
+}
+```
+
+**功能：** 我赞过谁
+
+```json
+{
+  "action": "get_like_list",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "type": "self"
+  },
+  "echo": "1"
+}
+```
+
 ### 新的好友
 
 **功能：** 同意/拒绝 新的好友 申请
