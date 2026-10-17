@@ -479,6 +479,36 @@ node demo-positive.js
 }
 ```
 
+**功能：** 同意/拒绝 新的好友 申请 （过滤）
+
+```json
+{
+  "action": "add_friend_notify_risk",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    },
+    "user_id": "目标账号",
+    "agree": true
+  },
+  "echo": "1"
+}
+```
+
+**功能：** 获取过滤列表
+
+```json
+{
+  "action": "get_friend_notify_list_risk",
+  "params": {
+    "self": {
+      "user_id": "登录账号"
+    }
+  },
+  "echo": "1"
+}
+```
+
 ### 群聊列表
 
 **功能：** 获取 群聊列表
